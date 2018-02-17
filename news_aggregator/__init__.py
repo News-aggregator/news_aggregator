@@ -40,6 +40,16 @@ class cities (db.Model):
     def __init__(self, city, city_id):
         self.city = city
         self.city_id = city_id
+class news (db.Model):
+    url = db.Column(db.String(500), primary_key = True)
+    country_iso_num = db.Column(db.Integer)
+    state_code = db.Column(db.String(2))
+    city_id = db.Column(db.Integer)
+    def __init__ (self, url, country_iso_num, state_code, city_id):
+        self.url = url
+        self.country_iso_num = country_iso_num
+        self.state_code = state_code
+        self.city_id = city_id
 
 @app.route("/")
 def main():

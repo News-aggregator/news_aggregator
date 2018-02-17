@@ -1,5 +1,93 @@
-h1 {
-    text-align: center;
-    color: red;
+body {
+	font-family: "roboto"; 
+	font-weight: 500; 
+	margin: 0; 
+	padding: 0;
 }
+
+#titleBar {
+	background-color: #383838;
+	width: 100%; 
+	height: 100px; 
+}
+
+#siteLogo {
+	width: 65px; 
+	margin-left: 20px; 
+}
+
+#titleDiv {
+	display: flex;
+	height: 100px; 
+
+}
+
+#siteTitle {
+	margin-left: 20px; 
+	font-size: 2.3em;
+	font-family: "courier";
+	font-weight: 500;
+	color: #91DC5A;
+	text-decoration: 
+	font-style: italic;
+
+}
+
+#profilePic {
+	float: right;
+	width: 65px; 
+	margin-top: 18px; 
+	margin-right: 20px; 
+}
+
+#siteContent {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  margin: 25px; 
+  height: 75vh;
+
+}
+
+#siteContent > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#mapBlock {
+	grid-column-start: 1; 
+	grid-column-end: 4; 
+
+}
+
+#searchBlock {
+
+}
+
+#feedBlock {
+	grid-column-start: 2; 
+	grid-column-end: 4; 
+
+}
+
+.item1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.item2 {
+	height: 30px; 
+}
+
+.item3 {
+	grid-row-start: 2;
+	grid-row-end: 4;
+}
+
 

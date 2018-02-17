@@ -43,10 +43,9 @@ class cities (db.Model):
 
 @app.route("/")
 def main():
-    
     db.create_all()
-    return render_template("map.html")
-    
+    return render_template("index.html")
+
 
 if __name__ == "__main__":
         app.run(host='0.0.0.0')

@@ -23,17 +23,38 @@
                 center: {lat: 39.8333333, lng: -98.585522},
                 zoom: 4,
                 styles: [
-                    {elementType: 'geometry', stylers: [{color: "#444444"}]},
+                    {elementType: 'water', stylers: [{color: "#444444"}]},
                     {elementType: 'labels', stylers: [{ visibility: "off"}]},
                     {
+                        featureType: "poi",
+                        elementType: "all",
+                        stylers: [{visibility: "off"}]
+                    },
+                    {
+                        featureType: "road",
+                        elementType: "all",
+                        stylers: [{visibility: "off"}]
+                    },
+                    {
+                        featureType: "Transit",
+                        elementType: "all",
+                        stylers: [{visbility: "off"}]
+                    },
+
+                    {
                         featureType: 'administrative',
-                        elementType: 'all',
-                        stylers: [{color: '#0fb203'}]
+                        elementType: 'labels',
+                        stylers: [{visibility: "off"}]
+                    },
+                    {
+                        featureType: 'administrative',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: "#FFFFFF"}]
                     },
                     {
                         featureType: 'landscape',
                         elementType: 'all',
-                        stylers: [{ visibility: "off" }]
+                        stylers: [{color: "#555555"}]
                     }
                 ]
             });

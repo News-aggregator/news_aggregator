@@ -1,5 +1,99 @@
-h1 {
-    text-align: center;
-    color: red;
+body {
+	font-family: "roboto"; 
+	font-weight: 500; 
+	margin: 0; 
+	padding: 0;
 }
+
+
+#titleBar {
+	background-color: #383838;
+	width: 100%; 
+	height: 100px; 
+}
+
+#siteLogo {
+	width: 65px; 
+	margin-left: 20px; 
+}
+
+#titleDiv {
+	display: flex;
+	height: 100px; 
+
+}
+
+#siteTitle {
+	margin-left: 20px; 
+	font-size: 2.3em;
+	font-family: "courier";
+	font-weight: 500;
+	color: #91DC5A;
+	text-decoration: 
+	font-style: italic;
+
+}
+
+#profilePic {
+	float: right;
+	width: 65px; 
+	margin-top: 18px; 
+	margin-right: 20px; 
+}
+
+#siteContent {
+	width: 100%; 
+	padding: 25px; 
+	height: calc(100vh - 100px);
+	box-sizing: border-box; 
+	display: flex;
+}
+
+#mapBlock {
+	background-color: #383838;
+	border-radius: 8px; 
+	height: calc(100% - 30px); 
+	width: 65%; 
+	margin-right: 10px; 
+	padding: 15px; 
+}
+
+#feedBlock {
+	width: 35%; 
+}
+
+#searchBar {
+	width: calc(100% - 19px);
+	padding-left: 15px;  
+	height: 40px; 
+	border-style: solid;
+	border-color: #383838;
+	border-width: 2px; 
+	border-radius: 8px; 
+	outline: 0; 
+	font-size: 20px;  
+}
+
+#feed {
+	background-color: #383838;
+	border-radius: 8px; 
+	margin-top: 15px; 
+	height: calc(100% - 60px);
+	box-sizing: border-box;
+	padding: 15px; 
+}
+
+#tabs {
+	background-color: red; 
+	height: 15%;
+}
+
+#map {
+	height: 85%; 
+	border-radius: 8px; 
+}
+
+
+
+
 

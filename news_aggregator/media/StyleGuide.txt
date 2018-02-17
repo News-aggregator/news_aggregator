@@ -1,0 +1,11 @@
+## News-Aggregator Style Guide
+
+# Themes: 
+## Brand Green: #91DC5A
+## Brand Gray: #383838
+
+# Fonts: 
+## Theme Font: Courier New, Bold Italic
+## Body Font: Roboto, Bold
+
+

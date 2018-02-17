@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-  <link rel="stylesheet" href="/static/css/styles.css">
+  <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
   <link rel="stylesheet" href="../static/css/styles.css">
   <meta charset="utf-8">
   <title>Newsmap</title>
 </head>
-  <body>
+<body>
 
     <div id="titleBar">
       <img src="../media/icons/profile.svg" alt="profile" id="profilePic">
@@ -21,32 +21,32 @@
     </div>
 
     <div id="siteContent">
-<!--       <div id="mapBlock">
-        
+      <div id="mapBlock">
+        <div id="tabs">
 
-      </div>
-
-      <div id="searchBlock">
-        
-
+        </div>
+        <div id="map"></div>
 
       </div>
 
       <div id="feedBlock">
-        
+
+         <div id="searchBarContainer">
+           <input id="searchBar" name="searchBar" placeholder="Search Location"/>
+
+         </div>
+
+         <div id="feed">
 
 
-      </div> -->
-      <div class="item1">1</div>
-      <div class="item2">2</div>
-      <div class="item3">3</div>  
-    </div>
+         </div>
 
+      </div>
+      
+   </div>
 
-
-
-
-
-  <script src="static/js/scripts.js"></script>
-  </body>
+  <script src="../static/js/scripts.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsDtiDeWvqWcfS0m09QjO9AfoxuRj2las&callback=initMap"
+    async defer></script>
+</body>
 </html>

@@ -11,3 +11,10 @@ accessSecret: <insert access secret token>
 ```
 
 
+### Dependencies
+
+In order to install requirements, run the following command, assuming you have `pip` installed. 
+
+```
+pip install -r requirements.txt
+```

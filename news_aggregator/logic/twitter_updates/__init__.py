@@ -1,20 +1,43 @@
 from __future__ import absolute_import, print_function
-import configparser, logging
 
+from flask import Flask, request, jsonify
+
+import configparser, logging
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 import tweepy
+import requests
+import json
+
+from time import sleep
+
+app = Flask(__name__)
+
+@app.route("/")
+def main():
+    return 'Hello Fuck Face'
+
+@app.route("/twitter", methods=['POST'])
+def scrape_json():
+    content = json.loads(request.get_json())
+    place = content.get('place')
+    city = place.get('name')
+    country_code = place.get('country_code')
+    
+    print(city)
+    print(country_code)
+    return "fuck"
 
 class StdOutListener(StreamListener):
-    #def on_data(self, data):
-    #    print(data)
-    #    return True
+    def on_data(self, data):
+        url = "http://127.0.0.1:5000/twitter"
+        payload = data
+        r = requests.post(url, json=payload)
+        return True
     def on_error(self, status):
-         print(status)
-    def on_status(self, status):
-        print(status.text)
-
+        print(status)
+    
 class TwitterUpdate():
     consumer_key=""
     consumer_secret=""
@@ -24,8 +47,6 @@ class TwitterUpdate():
     
     config = configparser.ConfigParser()
     config.read('tweet.ini')
-    
-    print(config.sections()) 
     
     if 'twitter' in config.sections():
         consumer_key = config['twitter']['consumerKey']
@@ -37,16 +58,12 @@ class TwitterUpdate():
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     
-    
-    
     api = tweepy.API(auth)
-    
-    
 
     listener = StdOutListener()
 
     stream = Stream(auth, listener)
-    stream.filter(track=['RIT'], async=True)
+    stream.filter(track=['RIT Tigers'], async=True)
 
 if __name__ == '__main__':
-    twitter = TwitterUpdate()
+    main()

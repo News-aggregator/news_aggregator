@@ -34,24 +34,19 @@ class TwitterUpdate():
         access_token = config['twitter']['accessToken']
         access_secret = config['twitter']['accessSecret']
         
-
-    print(consumer_key)
-    print(consumer_secret)
-        
-    print(access_token)
-    print(access_secret)
-
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     
+    
+    
     api = tweepy.API(auth)
-
-    print(api.me().name)
+    
+    
 
     listener = StdOutListener()
 
     stream = Stream(auth, listener)
-    stream.filter(track=['RIT'])
+    stream.filter(track=['RIT'], async=True)
 
 if __name__ == '__main__':
     twitter = TwitterUpdate()

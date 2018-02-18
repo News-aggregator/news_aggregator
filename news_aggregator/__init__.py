@@ -14,6 +14,12 @@ def main():
     db.create_all()
     return render_template("index.html")
 
+def addshit ():
+    country_iso = country.query.filter_by(country_iso2="us").first().country_iso2
+    region_id = region.query.filter_by(region_id = "NY").first().region_id
+
+    what = news(url = "google.com", country_iso2 = country_iso, region_id = 11, cities_id = 20)
+
 
 if __name__ == "__main__":
         app.run(host='0.0.0.0')

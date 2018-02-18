@@ -34,11 +34,28 @@ body {
 
 }
 
+#profileButton {
+	float: right;
+	width: 65px;
+	margin-top: 18px;
+	margin-right: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    outline: 0;
+}
+
+
 #profilePic {
 	float: right;
 	width: 65px; 
-	margin-top: 18px; 
-	margin-right: 20px; 
+	transition: opacity 0.5s; 
+	/*margin-top: 18px; 
+	margin-right: 20px; */
+}
+
+#profilePic:hover {
+	opacity: 0.5;
 }
 
 #siteContent {
@@ -84,13 +101,56 @@ body {
 }
 
 #tabs {
-	background-color: red; 
-	height: 15%;
+	height: 10%;
+	border-top-right-radius: 8px; 
+	border-top-left-radius: 8px; 
+	border-style: solid;
+	border-width: 2px; 
+	border-color: #FFFFFF;
 }
 
+
 #map {
-	height: 85%; 
-	border-radius: 8px; 
+	height: 90%; 
+	border-bottom-left-radius: 8px; 
+	border-bottom-right-radius: 8px; 
+}
+
+#feedTitle {
+	margin-top: 0px;
+	color: white;
+	font-weight: 400;
+	margin-left: 15px; 
+	margin-top: 10px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+	#siteContent {
+		display: block;
+	}
+
+	#mapBlock {
+		width: 95%;
+
+	}
+
+	#feedBlock {
+		width: 95%;
+		display: block;
+		margin: 0 auto;
+		margin-top: 25px; 
+		height: 500px; 
+	}
 }
 
 

@@ -1,3 +1,37 @@
+function geoCode() {
+
+    /*for(var key in data) {
+
+    }*/
+
+    var location = 'USA';
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                params: {
+                    address: location,
+                    key: 'AIzaSyAcNjRtRWgV-oMp4Px0mes58qxSFTL3bOo'
+                }
+            })
+        .then(function(response) {
+            console.log(response);
+
+            var geoLocation = response.data.results[0].geometry.location;
+            var geoLocationOutput = `
+            <ul class="list-group">
+              <li class="list-group-item"${geoLocation}</ul>li>
+            </ul>
+            `;
+
+            document.getElementById('geoLocation').innerHTML =
+                geoLocationOutput;
+        })
+        .catch(function(error){
+            console.log()
+        })
+}
+
+
+
+
 function initMap() {
             // sets the starting configuration of the google map. Mainly disables a lot of unnecessary clutter.
             // set into a dark theme.

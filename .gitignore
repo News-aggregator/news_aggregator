@@ -1,4 +1,4 @@
 *news_aggregator/engine.py
 *.pyc
 news_aggregator_env
-twitter_updates/tweet.ini
+news_aggregator/logic/twitter_updates/tweet.ini

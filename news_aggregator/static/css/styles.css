@@ -98,6 +98,9 @@ body {
 	height: calc(100% - 60px);
 	box-sizing: border-box;
 	padding: 15px; 
+	border-bottom-style: solid;
+	border-bottom-color: #383838;
+	border-bottom-width: 7px; 
 }
 
 #tabs {
@@ -117,16 +120,38 @@ body {
 }
 
 #feedTitle {
-	margin-top: 0px;
 	color: white;
 	font-weight: 400;
+	margin-top: 0px;
 	margin-left: 15px; 
 	margin-top: 10px; 
+	margin-bottom: 8px; 
 }
 
+#scrollable {
+	height: calc(100% - 50px); 
+	overflow: scroll;
+}
 
+.update {
+	background-color: #FFFFFF;
+	height: 230px; 
+	border-radius: 8px;
+	padding: 10px;
+	margin-top: 15px; 
+	margin-bottom: 15px; 
+}
 
+.updateTitle {
+	margin: 0; 
+	padding: 0;
+}
 
+.updateDesc {
+	margin: 0;
+	padding: 0;
+	line-height: 23px; 
+}
 
 
 

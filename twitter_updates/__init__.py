@@ -6,18 +6,14 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 import tweepy
 
-#app = Flask(__name__)
-
-#@app.route("/")
-#def hello():
-#
 class StdOutListener(StreamListener):
-    def on_data(self, data):
-        print(data)
-        return True
+    #def on_data(self, data):
+    #    print(data)
+    #    return True
     def on_error(self, status):
-        print(status)
-
+         print(status)
+    def on_status(self, status):
+        print(status.text)
 
 class TwitterUpdate():
     consumer_key=""
@@ -25,25 +21,25 @@ class TwitterUpdate():
 
     access_token=""
     access_secret=""
-   
-    def __init__(self):
-        
-        config = configparser.ConfigParser()
-        config.read('tweet.ini')
-        
-        print(config.sections())
-        if 'twitter' in config:
-            self.consumer_key = config['twitter']['consumerKey']
-            self.consumer_secret = config['twitter']['consumerSecret']
-
-            self.access_token = config['twitter']['accessToken']
-            self.access_secret = config['twitter']['accessSecret']
     
-        print(self.consumer_key)
-        print(self.consumer_secret)
+    config = configparser.ConfigParser()
+    config.read('tweet.ini')
+    
+    print(config.sections()) 
+    
+    if 'twitter' in config.sections():
+        consumer_key = config['twitter']['consumerKey']
+        consumer_secret = config['twitter']['consumerSecret']
+            
+        access_token = config['twitter']['accessToken']
+        access_secret = config['twitter']['accessSecret']
         
-        print(self.access_token)
-        print(self.access_secret)
+
+    print(consumer_key)
+    print(consumer_secret)
+        
+    print(access_token)
+    print(access_secret)
 
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
@@ -56,7 +52,6 @@ class TwitterUpdate():
 
     stream = Stream(auth, listener)
     stream.filter(track=['RIT'])
-
 
 if __name__ == '__main__':
     twitter = TwitterUpdate()

@@ -8,6 +8,7 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 import tweepy
 import requests
+import json
 
 from time import sleep
 
@@ -19,17 +20,20 @@ def main():
 
 @app.route("/twitter", methods=['POST'])
 def scrape_json():
-    print(request.is_json)
-    #if request.is_json():
-    #    print('Received JSON:')
-    #    print(request.get_json())
-    #else:
-    #    print('NO FUCKING JSON')
-    return 'fuck you'
+    content = json.loads(request.get_json())
+    place = content.get('place')
+    city = place.get('name')
+    country_code = place.get('country_code')
+    
+    print(city)
+    print(country_code)
+    return "fuck"
 
 class StdOutListener(StreamListener):
     def on_data(self, data):
-        r = requests.post('http://127.0.0.1:5000/twitter', data = {'key':'value'})
+        url = "http://127.0.0.1:5000/twitter"
+        payload = data
+        r = requests.post(url, json=payload)
         return True
     def on_error(self, status):
         print(status)

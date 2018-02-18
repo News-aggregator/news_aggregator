@@ -2,6 +2,7 @@ from flask import render_template
 from news_aggregator.engine import *
 from news_aggregator.database_config import *
 
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = engine
@@ -12,13 +13,17 @@ db = SQLAlchemy(app)
 @app.route("/")
 def main():
     db.create_all()
-    return render_template("index.html")
+    countryList = {}
 
-def addshit ():
-    country_iso = country.query.filter_by(country_iso2="us").first().country_iso2
-    region_id = region.query.filter_by(region_id = "NY").first().region_id
+    allnews = news.query.filter_by().all()
+    for new in allnews:
+        countryList[new.country_iso2] = new.url
 
-    what = news(url = "google.com", country_iso2 = country_iso, region_id = 11, cities_id = 20)
+    return render_template("index.html", country_list = countryList)
+
+@app.route("/twitter", methods=['POST'])
+def scrape_json():
+    pass
 
 
 if __name__ == "__main__":
